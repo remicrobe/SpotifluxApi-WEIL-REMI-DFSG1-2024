@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit AlbumEntity{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center mb-4">Edit AlbumEntity</h1>
+
+        {{ include('web/album/_form.html.twig', {'button_label': 'Update'}) }}
+
+        <div class="text-center mt-4">
+            <a href="{{ path('app_web_album_index') }}" class="btn btn-primary">Back to List</a>
+        </div>
+
+        {{ include('web/album/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

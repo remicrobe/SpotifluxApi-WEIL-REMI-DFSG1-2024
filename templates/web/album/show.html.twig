@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AlbumEntity{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center mb-4">{{ album_entity.name }}</h1>
+
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <th scope="row">Id</th>
+                <td>{{ album_entity.id }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Name</th>
+                <td>{{ album_entity.name }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Year</th>
+                <td>{{ album_entity.year }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Artist</th>
+                <td><a href="{{ path('app_web_artist_show', {'id': album_entity.artist.id}) }}">{{ album_entity.artist.name }}</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        {% if album_entity.tracks is not empty %}
+            <h2 class="text-center mb-3">Tracks</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Duration</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for track in album_entity.tracks %}
+                    <tr>
+                        <td><a href="{{ path('app_web_track_show', {'id': track.id}) }}">{{ track.title }}</a></td>
+                        <td>{{ track.duration }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        {% endif %}
+
+        <div class="text-center">
+            <a href="{{ path('app_web_album_index') }}" class="btn btn-primary">Back to List</a>
+            {% if is_granted('ROLE_ADMIN') %}
+
+            <a href="{{ path('app_web_album_edit', {'id': album_entity.id}) }}" class="btn btn-info">Edit</a>
+                {{ include('web/album/_delete_form.html.twig') }}
+            {% endif %}
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit TrackEntity{% endblock %}
+
+{% block body %}
+    <h1>Edit TrackEntity</h1>
+
+    {{ include('web/controller/track/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_web_controller_track_index') }}">back to list</a>
+
+    {{ include('web/controller/track/_delete_form.html.twig') }}
+{% endblock %}

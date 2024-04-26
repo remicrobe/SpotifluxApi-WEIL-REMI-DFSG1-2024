@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ArtistEntity{% endblock %}
+
+{% block body %}
+    <h1>Create new ArtistEntity</h1>
+
+    {{ include('web/artist/_form.html.twig') }}
+
+    <a href="{{ path('app_web_artist_index') }}">back to list</a>
+{% endblock %}

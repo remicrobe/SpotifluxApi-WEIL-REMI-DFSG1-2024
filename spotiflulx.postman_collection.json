@@ -1,0 +1,608 @@
+{
+	"info": {
+		"_postman_id": "868e8dfa-8aa6-4ae3-aa28-86faed2b9c2f",
+		"name": "spotiflulx",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30661445"
+	},
+	"item": [
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"remi@mns.fr\",\r\n    \"password\": \"mns\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login_check",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login_check"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "album",
+			"item": [
+				{
+					"name": "get albums",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxMzMxNTYsImV4cCI6MTcxNDEzNjc1Niwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.FyiBq9BewUCll5mpUnjXhmUGDmr3ygqP6F_S2D7fOHuj5BAwGgl1zi1C1rWaeyTJIqL-cKWZpC_Pg9FYP1thsDqMF_lZpchKu9-cLwYqyPLIQJleuf_iWcxFMHsoTT-P_lf9zYPkDMCMb5GvN5mgw9YNNYEuJ5vav8xQ_4YhKBcntZBzxN9bFzKWAfntk9wRmFRoIxDAk795m7GS-9KZ-h2Ty9jmcd8boY7KrTEK0HGhsuOWBd__6jTWqaccanUD8K6apjmIFqoLfiFB79vPZvCqCgGNzfScZ3Pc4ViMKUGOQ8MdKg-H5sQJNWqMq3IoDmD0ViQlOH94AgmQcWhetQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/album",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one album",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxMzMxNTYsImV4cCI6MTcxNDEzNjc1Niwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.FyiBq9BewUCll5mpUnjXhmUGDmr3ygqP6F_S2D7fOHuj5BAwGgl1zi1C1rWaeyTJIqL-cKWZpC_Pg9FYP1thsDqMF_lZpchKu9-cLwYqyPLIQJleuf_iWcxFMHsoTT-P_lf9zYPkDMCMb5GvN5mgw9YNNYEuJ5vav8xQ_4YhKBcntZBzxN9bFzKWAfntk9wRmFRoIxDAk795m7GS-9KZ-h2Ty9jmcd8boY7KrTEK0HGhsuOWBd__6jTWqaccanUD8K6apjmIFqoLfiFB79vPZvCqCgGNzfScZ3Pc4ViMKUGOQ8MdKg-H5sQJNWqMq3IoDmD0ViQlOH94AgmQcWhetQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/album/:album",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"album",
+								":album"
+							],
+							"variable": [
+								{
+									"key": "album",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create album",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxMzk1MjksImV4cCI6MTcxNDE0MzEyOSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.iPtd0vpNwcHihb-k4-UscGFzKmlV80Wztru0iZbl4_DTbOnfsXqinGlGoe40sosJuoNMZw3E7hnyiVDVsVmXOtZLh6XpOIPYAXAn-WhmtS5pfU9mdR-zmvO4QD6jMeFLf_xF9rm3XyXjiy39o9bqUcARA5p1J2M_VtgNof97DGrG1gdbrv61SeCrRWZI27KrCtN9xgSYqNmNAzdudE6L6bi3NhDmPDVnNz6L2ZAuYFDBUFgIGvRThFG7H13ovRtyLrLSAYdloBWmbzSC7jzdrgUCcuvt9yODcycZIbeQByy1VFuEnJLyx7dAisatLSzc7VQSUEzKhhgmwKf4oE1IEA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"LA ZONE\",\r\n    \"year\": 2023,\r\n    \"artistId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/album",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit album",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxMzMxNTYsImV4cCI6MTcxNDEzNjc1Niwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.FyiBq9BewUCll5mpUnjXhmUGDmr3ygqP6F_S2D7fOHuj5BAwGgl1zi1C1rWaeyTJIqL-cKWZpC_Pg9FYP1thsDqMF_lZpchKu9-cLwYqyPLIQJleuf_iWcxFMHsoTT-P_lf9zYPkDMCMb5GvN5mgw9YNNYEuJ5vav8xQ_4YhKBcntZBzxN9bFzKWAfntk9wRmFRoIxDAk795m7GS-9KZ-h2Ty9jmcd8boY7KrTEK0HGhsuOWBd__6jTWqaccanUD8K6apjmIFqoLfiFB79vPZvCqCgGNzfScZ3Pc4ViMKUGOQ8MdKg-H5sQJNWqMq3IoDmD0ViQlOH94AgmQcWhetQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"LA ZONE\",\r\n    \"year\": 2023,\r\n    \"artistId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/album/:idalbum",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"album",
+								":idalbum"
+							],
+							"variable": [
+								{
+									"key": "idalbum",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete album",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxMzMxNTYsImV4cCI6MTcxNDEzNjc1Niwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.FyiBq9BewUCll5mpUnjXhmUGDmr3ygqP6F_S2D7fOHuj5BAwGgl1zi1C1rWaeyTJIqL-cKWZpC_Pg9FYP1thsDqMF_lZpchKu9-cLwYqyPLIQJleuf_iWcxFMHsoTT-P_lf9zYPkDMCMb5GvN5mgw9YNNYEuJ5vav8xQ_4YhKBcntZBzxN9bFzKWAfntk9wRmFRoIxDAk795m7GS-9KZ-h2Ty9jmcd8boY7KrTEK0HGhsuOWBd__6jTWqaccanUD8K6apjmIFqoLfiFB79vPZvCqCgGNzfScZ3Pc4ViMKUGOQ8MdKg-H5sQJNWqMq3IoDmD0ViQlOH94AgmQcWhetQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/album/:idalbum",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"album",
+								":idalbum"
+							],
+							"variable": [
+								{
+									"key": "idalbum",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "track",
+			"item": [
+				{
+					"name": "get tracks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxNDIzNzEsImV4cCI6MTcxNDE0NTk3MSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.NsnajDgWQAN6oyM_T6kVorepl2r66zmHCj3uMeSF4sTwRlbpKA6OIgrZK8AUZ8pm5SYyrO5t1cX_2AyI7Fjgm9liNNu-w3f2UmwURzMz8IZH5Gj8l2-Nqbxl-IAAjvDVgtZUrSjgjZVGtNuYexql0edizlAiQTgIASRGgiZnFx1vyNq9Um9AvMCaqphFWITM30EYdl32fcnXLISJKYbyY0Hi_atPGlsXdgOF8ylgM2HVKkr1n-GimsNANfu5xdCq877flc7VRQ1M2Hyxv33bdOrmhZe-heWWY7kxBezCcdWLUVbrHkdBEBJ25ViT_ig9jD3CJvETvyCp7s4n0byEQQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/track",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"track"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one track",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxMzMxNTYsImV4cCI6MTcxNDEzNjc1Niwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.FyiBq9BewUCll5mpUnjXhmUGDmr3ygqP6F_S2D7fOHuj5BAwGgl1zi1C1rWaeyTJIqL-cKWZpC_Pg9FYP1thsDqMF_lZpchKu9-cLwYqyPLIQJleuf_iWcxFMHsoTT-P_lf9zYPkDMCMb5GvN5mgw9YNNYEuJ5vav8xQ_4YhKBcntZBzxN9bFzKWAfntk9wRmFRoIxDAk795m7GS-9KZ-h2Ty9jmcd8boY7KrTEK0HGhsuOWBd__6jTWqaccanUD8K6apjmIFqoLfiFB79vPZvCqCgGNzfScZ3Pc4ViMKUGOQ8MdKg-H5sQJNWqMq3IoDmD0ViQlOH94AgmQcWhetQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/track/:trackid",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"track",
+								":trackid"
+							],
+							"variable": [
+								{
+									"key": "trackid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create track",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxMzk1MjksImV4cCI6MTcxNDE0MzEyOSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.iPtd0vpNwcHihb-k4-UscGFzKmlV80Wztru0iZbl4_DTbOnfsXqinGlGoe40sosJuoNMZw3E7hnyiVDVsVmXOtZLh6XpOIPYAXAn-WhmtS5pfU9mdR-zmvO4QD6jMeFLf_xF9rm3XyXjiy39o9bqUcARA5p1J2M_VtgNof97DGrG1gdbrv61SeCrRWZI27KrCtN9xgSYqNmNAzdudE6L6bi3NhDmPDVnNz6L2ZAuYFDBUFgIGvRThFG7H13ovRtyLrLSAYdloBWmbzSC7jzdrgUCcuvt9yODcycZIbeQByy1VFuEnJLyx7dAisatLSzc7VQSUEzKhhgmwKf4oE1IEA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"JUL NUL\",\r\n    \"duration\": 5,\r\n    \"albumId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/track",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"track"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit track",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxMzMxNTYsImV4cCI6MTcxNDEzNjc1Niwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.FyiBq9BewUCll5mpUnjXhmUGDmr3ygqP6F_S2D7fOHuj5BAwGgl1zi1C1rWaeyTJIqL-cKWZpC_Pg9FYP1thsDqMF_lZpchKu9-cLwYqyPLIQJleuf_iWcxFMHsoTT-P_lf9zYPkDMCMb5GvN5mgw9YNNYEuJ5vav8xQ_4YhKBcntZBzxN9bFzKWAfntk9wRmFRoIxDAk795m7GS-9KZ-h2Ty9jmcd8boY7KrTEK0HGhsuOWBd__6jTWqaccanUD8K6apjmIFqoLfiFB79vPZvCqCgGNzfScZ3Pc4ViMKUGOQ8MdKg-H5sQJNWqMq3IoDmD0ViQlOH94AgmQcWhetQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"JUL NUL\",\r\n    \"duration\": 5,\r\n    \"albumId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/album/:idtrack",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"album",
+								":idtrack"
+							],
+							"variable": [
+								{
+									"key": "idtrack",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete track",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxMzMxNTYsImV4cCI6MTcxNDEzNjc1Niwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.FyiBq9BewUCll5mpUnjXhmUGDmr3ygqP6F_S2D7fOHuj5BAwGgl1zi1C1rWaeyTJIqL-cKWZpC_Pg9FYP1thsDqMF_lZpchKu9-cLwYqyPLIQJleuf_iWcxFMHsoTT-P_lf9zYPkDMCMb5GvN5mgw9YNNYEuJ5vav8xQ_4YhKBcntZBzxN9bFzKWAfntk9wRmFRoIxDAk795m7GS-9KZ-h2Ty9jmcd8boY7KrTEK0HGhsuOWBd__6jTWqaccanUD8K6apjmIFqoLfiFB79vPZvCqCgGNzfScZ3Pc4ViMKUGOQ8MdKg-H5sQJNWqMq3IoDmD0ViQlOH94AgmQcWhetQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/track/:idtrack",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"track",
+								":idtrack"
+							],
+							"variable": [
+								{
+									"key": "idtrack",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "artist",
+			"item": [
+				{
+					"name": "get artists",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxNDIzNzEsImV4cCI6MTcxNDE0NTk3MSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.NsnajDgWQAN6oyM_T6kVorepl2r66zmHCj3uMeSF4sTwRlbpKA6OIgrZK8AUZ8pm5SYyrO5t1cX_2AyI7Fjgm9liNNu-w3f2UmwURzMz8IZH5Gj8l2-Nqbxl-IAAjvDVgtZUrSjgjZVGtNuYexql0edizlAiQTgIASRGgiZnFx1vyNq9Um9AvMCaqphFWITM30EYdl32fcnXLISJKYbyY0Hi_atPGlsXdgOF8ylgM2HVKkr1n-GimsNANfu5xdCq877flc7VRQ1M2Hyxv33bdOrmhZe-heWWY7kxBezCcdWLUVbrHkdBEBJ25ViT_ig9jD3CJvETvyCp7s4n0byEQQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/artist",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"artist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one artist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxMzMxNTYsImV4cCI6MTcxNDEzNjc1Niwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.FyiBq9BewUCll5mpUnjXhmUGDmr3ygqP6F_S2D7fOHuj5BAwGgl1zi1C1rWaeyTJIqL-cKWZpC_Pg9FYP1thsDqMF_lZpchKu9-cLwYqyPLIQJleuf_iWcxFMHsoTT-P_lf9zYPkDMCMb5GvN5mgw9YNNYEuJ5vav8xQ_4YhKBcntZBzxN9bFzKWAfntk9wRmFRoIxDAk795m7GS-9KZ-h2Ty9jmcd8boY7KrTEK0HGhsuOWBd__6jTWqaccanUD8K6apjmIFqoLfiFB79vPZvCqCgGNzfScZ3Pc4ViMKUGOQ8MdKg-H5sQJNWqMq3IoDmD0ViQlOH94AgmQcWhetQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/artist/:artistId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"artist",
+								":artistId"
+							],
+							"variable": [
+								{
+									"key": "artistId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create artist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxMzMxNTYsImV4cCI6MTcxNDEzNjc1Niwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.FyiBq9BewUCll5mpUnjXhmUGDmr3ygqP6F_S2D7fOHuj5BAwGgl1zi1C1rWaeyTJIqL-cKWZpC_Pg9FYP1thsDqMF_lZpchKu9-cLwYqyPLIQJleuf_iWcxFMHsoTT-P_lf9zYPkDMCMb5GvN5mgw9YNNYEuJ5vav8xQ_4YhKBcntZBzxN9bFzKWAfntk9wRmFRoIxDAk795m7GS-9KZ-h2Ty9jmcd8boY7KrTEK0HGhsuOWBd__6jTWqaccanUD8K6apjmIFqoLfiFB79vPZvCqCgGNzfScZ3Pc4ViMKUGOQ8MdKg-H5sQJNWqMq3IoDmD0ViQlOH94AgmQcWhetQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"LA ZONE\",\r\n    \"year\": 2023\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/artist",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"artist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit artsit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxNDIzNzEsImV4cCI6MTcxNDE0NTk3MSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.NsnajDgWQAN6oyM_T6kVorepl2r66zmHCj3uMeSF4sTwRlbpKA6OIgrZK8AUZ8pm5SYyrO5t1cX_2AyI7Fjgm9liNNu-w3f2UmwURzMz8IZH5Gj8l2-Nqbxl-IAAjvDVgtZUrSjgjZVGtNuYexql0edizlAiQTgIASRGgiZnFx1vyNq9Um9AvMCaqphFWITM30EYdl32fcnXLISJKYbyY0Hi_atPGlsXdgOF8ylgM2HVKkr1n-GimsNANfu5xdCq877flc7VRQ1M2Hyxv33bdOrmhZe-heWWY7kxBezCcdWLUVbrHkdBEBJ25ViT_ig9jD3CJvETvyCp7s4n0byEQQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"JUL NUL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/artist/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"artist",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete artist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxNDIzNzEsImV4cCI6MTcxNDE0NTk3MSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.NsnajDgWQAN6oyM_T6kVorepl2r66zmHCj3uMeSF4sTwRlbpKA6OIgrZK8AUZ8pm5SYyrO5t1cX_2AyI7Fjgm9liNNu-w3f2UmwURzMz8IZH5Gj8l2-Nqbxl-IAAjvDVgtZUrSjgjZVGtNuYexql0edizlAiQTgIASRGgiZnFx1vyNq9Um9AvMCaqphFWITM30EYdl32fcnXLISJKYbyY0Hi_atPGlsXdgOF8ylgM2HVKkr1n-GimsNANfu5xdCq877flc7VRQ1M2Hyxv33bdOrmhZe-heWWY7kxBezCcdWLUVbrHkdBEBJ25ViT_ig9jD3CJvETvyCp7s4n0byEQQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/artist/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"artist",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxMzMxNTYsImV4cCI6MTcxNDEzNjc1Niwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicmVtaUBtbnMuZnIifQ.FyiBq9BewUCll5mpUnjXhmUGDmr3ygqP6F_S2D7fOHuj5BAwGgl1zi1C1rWaeyTJIqL-cKWZpC_Pg9FYP1thsDqMF_lZpchKu9-cLwYqyPLIQJleuf_iWcxFMHsoTT-P_lf9zYPkDMCMb5GvN5mgw9YNNYEuJ5vav8xQ_4YhKBcntZBzxN9bFzKWAfntk9wRmFRoIxDAk795m7GS-9KZ-h2Ty9jmcd8boY7KrTEK0HGhsuOWBd__6jTWqaccanUD8K6apjmIFqoLfiFB79vPZvCqCgGNzfScZ3Pc4ViMKUGOQ8MdKg-H5sQJNWqMq3IoDmD0ViQlOH94AgmQcWhetQ",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:8000/api",
+			"type": "string"
+		}
+	]
+}

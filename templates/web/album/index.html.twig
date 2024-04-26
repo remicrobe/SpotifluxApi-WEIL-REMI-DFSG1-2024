@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AlbumEntity index{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center mb-4">AlbumEntity index</h1>
+
+        <table class="table table-bordered">
+            <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Artist</th>
+                <th>Year</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for album_entity in album_entities %}
+                <tr>
+                    <td>{{ album_entity.id }}</td>
+                    <td>{{ album_entity.name }}</td>
+                    <td> {% if album_entity.artist is not null %}
+                        <a href="{{ path('app_web_artist_show', {'id': album_entity.artist.id}) }}">{{ album_entity.artist.name }}</a>
+
+                        {% else %}
+                            aucun
+                        {% endif %}</td>
+                    <td>{{ album_entity.year }}</td>
+                    <td>
+                        <a href="{{ path('app_web_album_show', {'id': album_entity.id}) }}" class="btn btn-primary">Show</a>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a href="{{ path('app_web_album_edit', {'id': album_entity.id}) }}" class="btn btn-info">Edit</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4" class="text-center">No records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_web_album_new') }}" class="btn btn-success">Create new</a>
+    </div>
+{% endblock %}

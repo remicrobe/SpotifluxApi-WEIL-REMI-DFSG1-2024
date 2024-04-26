@@ -29,3 +29,5 @@
 ###< lexik/jwt-authentication-bundle ###
 
 spotiflux/var/cache/dev/Symfony/Config/Framework/Messenger/
+
+spotiflux/var/cache/dev/profiler/be/8c/
